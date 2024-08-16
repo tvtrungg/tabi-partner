@@ -1,0 +1,63 @@
+export const createBranch = {
+  "pages.createBranch": {
+    "step-1-hst.title": "BM Account",
+    "step-1.title": "Accommodation Type",
+    "step-2.title": "Branch Information",
+    "step-3.title": "Branch Facilities",
+    "step-4.title": "Branch Image",
+    "button.back": "Back",
+    "button.next": "Next",
+    "button.submit": "Submit",
+    "breadcrumb.branches": "Branches",
+    "breadcrumb.create": "Create",
+    "form.branchName": "Branch Name",
+    "form.branchName.required": "Please enter branch name",
+    "form.branchName.placeholder":
+      "Full name of the branch. Example: ABC Hotel",
+    "form.address": "Address",
+    "form.address.required": "Please enter address",
+    "form.address.placeholder":
+      "Address of the branch. Example: 123 ABC Street",
+    "form.description": "Description",
+    "form.description.required": "Please enter description",
+    "form.description.placeholder":
+      "Description of the branch. Example: ABC Hotel is a 5-star hotel with 100 rooms.",
+    "form.receptionArea": "Reception Area",
+    "form.receptionArea.required": "Please select reception area",
+    "form.receptionArea.available": "Available 24 Hours",
+    "form.receptionArea.notAvailable": "Not Available 24 Hours",
+    "form.province-city": "Province/City",
+    "form.province-city.required": "Please select province/city",
+    "form.province-city.placeholder": "Select province/city",
+    "form.district": "District",
+    "form.district.required": "Please select district",
+    "form.district.placeholder": "Select district",
+    "form.ward": "Ward",
+    "form.ward.required": "Please select ward",
+    "form.ward.placeholder": "Select ward",
+    "form.divider.policies": "Policies",
+    "form.cancelPolicy": "Cancellation Policy",
+    "form.cancellationTimeUnit": "Cancellation Time Unit",
+    "form.cancellationTimeUnit.required":
+      "Please select cancellation time unit",
+    "form.cancellationTimeUnit.placeholder": "Select cancellation time unit",
+    "form.cancellationTimeValue": "Cancellation Time Value",
+    "form.cancellationTimeValue.required":
+      "Please enter cancellation time value",
+    "form.cancellationTimeValue.placeholder": "Cancellation time value",
+    "form.generalPolicy": "General Policy",
+    "form.generalPolicy.required": "Please enter general policy",
+    "form.generalPolicy.placeholder": "General policy",
+    "form.mainFacility.required": "Please select at least one facility",
+    "message.createBranch.success": "Create branch successfully",
+    "message.createBranch.image": "Please upload branch image",
+    "dragger.hint_1": "Click or drag file to this area to upload branch image",
+    "dragger.hint_2": "This image is thumbnail of branch in list branch",
+    note: {
+      cancelPolicy:
+        "Cancellation policy is a hotel's rules and conditions for canceling or changing a reservation, including cancellation periods and applicable fees (Example: value = 1, time unit is HOUR -> user is allowed to cancel 1 hour before check-in) - only applies to users who pay at the hotel.",
+      generalPolicy:
+        "General policy is a set of regulations, principles and guidelines that an organization, business or agency applies to regulate behavior and manage specific issues in its field of activity (Surcharge policy for exceeding the specified number of people or free for children under certain ages).",
+    },
+  },
+};

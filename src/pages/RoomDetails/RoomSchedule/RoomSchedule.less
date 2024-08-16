@@ -1,0 +1,118 @@
+.custom-calendar {
+  border: 1px solid #e9e9e9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  .ant-picker-panel {
+    .ant-picker-date-panel {
+      .ant-picker-body {
+        overflow: hidden;
+        padding: 8px;
+        .ant-picker-content {
+          tbody {
+            tr {
+              td:hover {
+                .ant-picker-cell-inner.wrapper-booked.bg-primary-dominant-light {
+                  background: @primary-dominant-light;
+                  color: white;
+                }
+                .ant-picker-cell-inner.wrapper-booked.bg-primary-accent-light {
+                  background: @primary-accent-light;
+                  color: white;
+                }
+              }
+              .ant-picker-cell.ant-picker-cell-in-view.ant-picker-cell-selected {
+                .ant-picker-cell-inner {
+                  background: transparent;
+                  color: #000;
+                }
+              }
+              .ant-picker-cell.ant-picker-cell-in-view.ant-picker-cell-selected {
+                .ant-picker-cell-inner.wrapper-booked.bg-primary-dominant-light {
+                  background: @primary-dominant-light;
+                  color: white;
+                }
+                .ant-picker-cell-inner.wrapper-booked.bg-primary-accent-light {
+                  background: @primary-accent-light;
+                  color: white;
+                }
+              }
+              td {
+                .ant-picker-cell-inner {
+                  .date-booked {
+                    color: white;
+                  }
+                }
+              }
+              .ant-picker-cell-today {
+                z-index: 20;
+                // .ant-picker-cell-inner {
+                //   .date-booked {
+                //     color: #000;
+                //   }
+                // }
+              }
+              .ant-picker-cell.ant-picker-cell-in-view {
+                .ant-picker-cell-inner {
+                  min-width: 32px;
+                  height: 32px;
+                  line-height: 32px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ant-picker-calendar-header {
+    .ant-radio-group {
+      label {
+        display: none;
+      }
+    }
+  }
+}
+
+.list-custom-schedule {
+  display: flex;
+  padding: 8px;
+  gap: 40px;
+  .ant-list-header {
+    border: none;
+  }
+  .ant-spin-container {
+    .ant-list-items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      .list-item-schedule:last-child {
+        padding-left: 32px;
+        border-left: 2px solid #f0f0f0;
+      }
+    }
+  }
+}
+
+.date-duplicate {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: @primary-dominant-light;
+  z-index: -10;
+}
+
+.date-duplicate::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: none;
+  border-bottom: 32px solid transparent;
+  border-left: 56px solid @primary-accent-light;
+  z-index: -10;
+}

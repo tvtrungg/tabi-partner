@@ -1,0 +1,125 @@
+export const roomDetails = {
+  "pages.room_details": {
+    title: "Chi tiết phòng",
+    bread_crumb: {
+      rooms_management: "Quản lý phòng",
+      details: "Chi tiết",
+      edit: "Chỉnh sửa",
+    },
+    room_name: "Tên phòng",
+    room_type: "Loại phòng",
+    number_rooms: "Số lượng phòng",
+    price_details: "Chi tiết giá phòng",
+    max_occupancy: "Sức chứa",
+    width: "Chiều rộng (m)",
+    length: "Chiều dài (m)",
+    quantity: "Số lượng",
+    bed_type: "Loại giường",
+    status: "Trạng thái",
+    available: "Còn trống",
+    check_in_date: "Ngày nhận phòng",
+    check_out_date: "Ngày trả phòng",
+    check_in_time: "Giờ nhận phòng",
+    check_out_time: "Giờ trả phòng",
+    include_breakfast: "Bữa sáng",
+    max_price: "Giá cao nhất",
+    price_vn: "Giá (VND)",
+    price_us: "Giá (USD)",
+    facture_reduction: {
+      title: "Giảm giá theo loại ngày",
+      online_method: "Trả online",
+      on_cash_method: "Trả tiền mặt",
+      normal_day: "Ngày thường",
+      holiday: "Ngày lễ",
+      weekend: "Cuối tuần",
+    },
+    reservation_reductions: {
+      title: "Giảm giá theo thời gian đặt phòng",
+      quantity: "Số lượng",
+      time_unit: "Đơn vị",
+      reduction: "Giảm giá",
+    },
+    see_more: "Xem thêm",
+    upload: "Tải lên",
+    room_info: {
+      title: "Thông tin phòng",
+      modal_title: "Chỉnh sửa thông tin phòng",
+      room_name: {
+        label: "Tên phòng",
+        required: "Vui lòng nhập tên phòng",
+      },
+      width: {
+        label: "Chiều rộng (m)",
+        required: "Vui lòng nhập chiều rộng phòng",
+      },
+      length: {
+        label: "Chiều dài (m)",
+        required: "Vui lòng nhập chiều dài phòng",
+      },
+      max_occupancy: {
+        label: "Sức chứa tối đa",
+        required: "Vui lòng nhập sức chứa tối đa",
+      },
+      quantity: {
+        label: "Số lượng phòng",
+        required: "Vui lòng nhập số lượng phòng",
+      },
+      bed_type: {
+        label: "Loại giường",
+        required: "Vui lòng chọn loại giường",
+      },
+      max_price: {
+        label: "Giá cao nhất",
+        required: "Vui lòng nhập giá cao nhất (VND)",
+      },
+      edit_success: "Chỉnh sửa thông tin phòng thành công !!!",
+      approve_title: "Duyệt phòng này",
+      approve_confirm: "Bạn có chắc chắn muốn duyệt phòng này không?",
+      approve_success: "Duyệt phòng thành công !!!",
+      reject_title: "Xác nhận từ chối phòng",
+      reject_confirm: "Bạn có chắc chắn muốn từ chối phòng này không?",
+      reject_success: "Từ chối phòng thành công !!!",
+    },
+
+    gallery: {
+      title: "Thư viện ảnh",
+      success_upload: "Tải ảnh lên thành công !",
+      on_error: "Chưa có ảnh nào được tải lên !",
+    },
+
+    room_type_info: {
+      title: "Thay đổi loại phòng",
+      type_name: {
+        label: "Tên loại phòng",
+        placeholder: "Chọn loại phòng",
+        required: "Vui lòng chọn loại phòng!",
+      },
+      edit_success: "Thay đổi loại phòng thành công !!!",
+    },
+
+    edit_price_details: {
+      title: "Chỉnh sửa chi tiết giá phòng",
+      step: {
+        info: "Thông tin",
+        price: "Giá",
+      },
+      update_success: "Cập nhật chi tiết giá phòng thành công !!!",
+    },
+
+    room_schedule: {
+      title: "Lịch phòng",
+      add_schedule: "Thêm lịch",
+      update_schedule: "Cập nhật lịch",
+      delete_schedule: "Xóa lịch",
+      room_schedule: "Lịch phòng",
+      start_date: "Ngày bắt đầu",
+      end_date: "Ngày kết thúc",
+      start_time: "Giờ bắt đầu",
+      end_time: "Giờ kết thúc",
+      schedule: "Lịch",
+      add_success: "Thêm lịch thành công !!!",
+      update_success: "Cập nhật lịch thành công !!!",
+      delete_success: "Xóa lịch thành công !!!",
+    },
+  },
+};
