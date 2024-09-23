@@ -40,11 +40,11 @@ export default defineConfig({
     },
     {
       property: "og:image:width",
-      content: "724",
+      content: "700",
     },
     {
       property: "og:image:height",
-      content: "521",
+      content: "504",
     },
   ],
   moment2dayjs: {
