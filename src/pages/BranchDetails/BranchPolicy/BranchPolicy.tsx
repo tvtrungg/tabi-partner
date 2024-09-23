@@ -41,19 +41,14 @@ function BranchPolicy({ id, data, access, refetch }: TBranchPolicy) {
 
       <div>
         <div className="flex items-center gap-3 mb-3">
-          <h3 className="font-medium mb-0">
+          <h3 className="mb-0">
             <FormattedMessage id="pages.branch_details.branch_policies.minimum_cancellation_period" />
             :
           </h3>
-          <h2 className="mb-0 font-light text-sm">
+          <h2 className="mb-0 font-light text-base">
             {data.cancellation_time_value} {data.cancellation_time_unit}
           </h2>
-          <h2 className="mb-1 font-light text-sm"></h2>
         </div>
-        <h3 className="font-medium">
-          <FormattedMessage id="pages.branch_details.general_policy" />
-        </h3>
-
         <pre className="mb-1 font-light text-sm w-full flex flex-wrap whitespace-pre-wrap">
           {data.general_policy}
         </pre>
@@ -65,6 +60,7 @@ function BranchPolicy({ id, data, access, refetch }: TBranchPolicy) {
           }
           open={isBIModalOpen}
           okText="Save"
+          centered
           onCancel={() => {
             setIsBIModalOpen(false);
             form.resetFields();

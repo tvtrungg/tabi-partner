@@ -37,7 +37,7 @@ function CreateRoom() {
   const access = useAccess();
   const intl = useIntl();
   const navigate = useNavigate();
-  const [form] = Form.useForm<TCreationRoom>();
+  const [form] = Form.useForm<any>();
 
   // file
   const [files, setFiles] = useState<UploadFile<any>[]>([]);

@@ -1,0 +1,50 @@
+[
+  {
+    "month": 1,
+    "quantity": 120
+  },
+  {
+    "month": 2,
+    "quantity": 90
+  },
+  {
+    "month": 3,
+    "quantity": 96
+  },
+  {
+    "month": 4,
+    "quantity": 123
+  },
+  {
+    "month": 5,
+    "quantity": 139
+  },
+  {
+    "month": 6,
+    "quantity": 145
+  },
+  {
+    "month": 7,
+    "quantity": 106
+  },
+  {
+    "month": 8,
+    "quantity": 95
+  },
+  {
+    "month": 9,
+    "quantity": 110
+  },
+  {
+    "month": 10,
+    "quantity": 83
+  },
+  {
+    "month": 11,
+    "quantity": 74
+  },
+  {
+    "month": 12,
+    "quantity": 52
+  }
+]

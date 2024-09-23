@@ -16,7 +16,7 @@ function Ratings({ data }: RatingsProps) {
         <FormattedMessage id="pages.branch_details.ratings.title" />
       </h1>
 
-      <div className="h-full overflow-x-scroll flex gap-5">
+      <div className="h-full overflow-x-scroll flex gap-5 px-2">
         {data.ratings.slice(0, quantityDisplay).map((rating) => (
           <div
             key={rating.id}

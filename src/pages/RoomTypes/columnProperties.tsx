@@ -258,10 +258,10 @@ export const ColumnProperties = (
       width: 150,
       render: (value: TRoomTypeOfBranch) => {
         const checkInTime = new Date(value.check_in_time);
-        checkInTime.setHours(checkInTime.getHours() - 7);
+        checkInTime.setHours(checkInTime.getHours());
 
         const checkOutTime = new Date(value.check_out_time);
-        checkOutTime.setHours(checkOutTime.getHours() - 7);
+        checkOutTime.setHours(checkOutTime.getHours());
 
         return (
           <div className="flex flex-row items-center gap-4">

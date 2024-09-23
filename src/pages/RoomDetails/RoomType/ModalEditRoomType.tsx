@@ -25,8 +25,9 @@ function ModalEditRoomType({
   refetch,
 }: TModalEditRoomTypeProps) {
   const [form] = Form.useForm<TRoomTypeBM>();
-  const [selectedRoomType, setSelectedRoomType] =
-    useState<TRoomTypeBM | null>();
+  const [selectedRoomType, setSelectedRoomType] = useState<TRoomTypeBM | null>(
+    data
+  );
 
   const intl = useIntl();
 
@@ -40,6 +41,7 @@ function ModalEditRoomType({
       open={editRoomType}
       okText={<FormattedMessage id="roomType.editRoomTypeForm.buttonOk" />}
       closeIcon={true}
+      centered
       onOk={() => {
         form
           .validateFields()
@@ -102,7 +104,8 @@ function ModalEditRoomType({
               showSearch
               onChange={(value) => {
                 setSelectedRoomType(
-                  dataRoomTypes?.data.find((option) => option.id === value)
+                  dataRoomTypes?.data.find((option) => option.id === value) ||
+                    null
                 );
               }}
               placeholder={intl.formatMessage({
@@ -132,13 +135,13 @@ function ModalEditRoomType({
               </h3>
             </Col>
             <Col span={16}>
-              <h3 className="mb-4 font-light text-sm hover:text-slate-500">
+              <h3 className="mb-4 font-light text-sm">
                 {getTimeHourAndMinute(selectedRoomType.check_in_time)}
               </h3>
-              <h3 className="mb-4 font-light text-sm hover:text-slate-500">
+              <h3 className="mb-4 font-light text-sm">
                 {getTimeHourAndMinute(selectedRoomType.check_out_time)}
               </h3>
-              <h3 className="mb-4 font-light text-sm hover:text-slate-500">
+              <h3 className="mb-4 font-light text-sm">
                 {selectedRoomType.include_breakfast ? (
                   <>
                     <FormattedMessage id="roomType.table.includeBreakfastValue.included" />{" "}

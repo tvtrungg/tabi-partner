@@ -11,6 +11,7 @@ declare module "*.gif";
 declare module "*.bmp";
 declare module "*.tiff";
 declare module "*.pdf";
+declare module "*.json";
 declare module "omit.js";
 declare module "numeral";
 declare module "@antv/data-set";

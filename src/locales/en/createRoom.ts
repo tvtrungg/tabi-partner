@@ -29,7 +29,7 @@ export const createRoom = {
         submitButton: "Submit",
         nextButton: "Next",
         backButton: "Back",
-        estimatedPrice: "Estimated price",
+        estimatedPrice: "Est. price",
         estimatedRoomPriceIn: "Estimated room price is in",
         holiday: "Holiday",
         weekend: "Weekend",

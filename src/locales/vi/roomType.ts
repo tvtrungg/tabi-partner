@@ -12,8 +12,8 @@ export const roomType = {
       },
       columnLabels: {
         roomType: "Loại Phòng",
-        checkinTime: "Thời Gian Nhận Phòng",
-        checkoutTime: "Thời Gian Trả Phòng",
+        checkinTime: "Giờ Nhận Phòng",
+        checkoutTime: "Giờ Trả Phòng",
         includeBreakfast: "Bao gồm Bữa Sáng",
         action: "Hành Động",
       },
@@ -27,14 +27,14 @@ export const roomType = {
         rule: "Phải có ít nhất 4 ký tự.",
       },
       checkinTime: {
-        label: "Thời gian nhận phòng",
+        label: "Giờ nhận phòng",
         required: "Vui lòng nhập thời gian nhận phòng!",
-        placeholder: "Thời gian nhận phòng",
+        placeholder: "Giờ nhận phòng",
       },
       checkoutTime: {
-        label: "Thời gian trả phòng",
+        label: "Giờ trả phòng",
         required: "Vui lòng nhập thời gian trả phòng!",
-        placeholder: "Thời gian trả phòng",
+        placeholder: "Giờ trả phòng",
       },
       includeBreakfast: {
         label: "Bao gồm bữa sáng",
@@ -57,14 +57,14 @@ export const roomType = {
         rule: "Phải có ít nhất 4 ký tự.",
       },
       checkinTime: {
-        label: "Thời gian nhận phòng",
+        label: "Giờ nhận phòng",
         required: "Vui lòng nhập thời gian nhận phòng!",
-        placeholder: "Thời gian nhận phòng",
+        placeholder: "Giờ nhận phòng",
       },
       checkoutTime: {
-        label: "Thời gian trả phòng",
+        label: "Giờ trả phòng",
         required: "Vui lòng nhập thời gian trả phòng!",
-        placeholder: "Thời gian trả phòng",
+        placeholder: "Giờ trả phòng",
       },
       includeBreakfast: {
         label: "Bao gồm bữa sáng",
@@ -86,10 +86,10 @@ export const roomType = {
         placeholder: "Chọn loại phòng để liên kết",
       },
       checkinTime: {
-        label: "Thời gian nhận phòng",
+        label: "Giờ nhận phòng",
       },
       checkoutTime: {
-        label: "Thời gian trả phòng",
+        label: "Giờ trả phòng",
       },
       includeBreakfast: {
         label: "Bao gồm bữa sáng",

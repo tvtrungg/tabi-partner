@@ -74,4 +74,6 @@ export default {
     quantity: "Quantity",
     revenue: "Revenue",
   },
+  versionNote:
+    "This website is the mock version since our server has been shut down. Some functions may not work. Input anything to login.",
 };

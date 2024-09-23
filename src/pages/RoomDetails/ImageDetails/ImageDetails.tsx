@@ -1,13 +1,13 @@
 import { fileQueryField } from "@/constants/fileQueryField";
 import {
   useDeleteFiles,
-  useGetFiles,
+  // useGetFiles,
   usePostBatchFilePresigned,
 } from "@/services/file/services";
 import { convertToBatchFileRequest, uploadS3 } from "@/services/file/utils";
 import { Access, FormattedMessage, useIntl } from "@umijs/max";
 import { Button, message, Modal, Upload, UploadFile } from "antd";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { RcFile } from "antd/es/upload";
 import { PlusOutlined } from "@ant-design/icons";
 import { UPDATED } from "@/constants/status";
@@ -15,6 +15,9 @@ import { useUpdateRoomStatus } from "@/services/room/services";
 import { FiEdit } from "react-icons/fi";
 import { BsCheck } from "react-icons/bs";
 import { MdCancel } from "react-icons/md";
+import room_1 from "@/assets/images/room_1.jpg";
+import room_2 from "@/assets/images/room_2.jpg";
+import room_3 from "@/assets/images/room_3.jpg";
 import "./ImageDEtails.less";
 
 type ImageDetailsProps = {
@@ -57,18 +60,22 @@ function ImageDetails({ data, refetch, access }: ImageDetailsProps) {
   );
 
   // get image of room
-  const {
-    data: dataGetImage,
-    isLoading,
-    refetch: refetchGetImage,
-  } = useGetFiles({
-    attachment_id: data?.id,
-    attachment_type: fileQueryField.room.attachmentType,
-    field: fileQueryField.room.field.gallery,
-  });
+  // const {
+  //   data: dataGetImage,
+  //   isLoading,
+  //   refetch: refetchGetImage,
+  // } = useGetFiles({
+  //   attachment_id: data?.id,
+  //   attachment_type: fileQueryField.room.attachmentType,
+  //   field: fileQueryField.room.field.gallery,
+  // });
 
   // post file
-  const [files, setFiles] = useState<ICustomUploadFile[]>([]);
+  const [files, setFiles] = useState<ICustomUploadFile[]>([
+    { file_id: 1, sort_order: 0, uid: "1", name: "room_1", url: room_1 },
+    { file_id: 2, sort_order: 1, uid: "2", name: "room_2", url: room_2 },
+    { file_id: 3, sort_order: 2, uid: "3", name: "room_3", url: room_3 },
+  ]);
   const fileMutation = usePostBatchFilePresigned();
 
   // handle upload
@@ -136,7 +143,7 @@ function ImageDetails({ data, refetch, access }: ImageDetailsProps) {
     fileMutation.mutate(creation, {
       onSuccess: (resp) => {
         uploadS3(resp, newFiles).then(() => {
-          refetchGetImage();
+          // refetchGetImage();
           setIsEdit(false);
         });
       },
@@ -178,25 +185,25 @@ function ImageDetails({ data, refetch, access }: ImageDetailsProps) {
     setDeletedFiles([]);
   };
 
-  const hasImages = data.status === UPDATED && dataGetImage !== null;
-  useEffect(() => {
-    if (hasImages) {
-      setFiles(
-        dataGetImage?.data?.map((item) => {
-          return {
-            name: item.file_name,
-            status: isLoading ? "uploading" : "done",
-            url: item.get_url,
-            file_id: item.id,
-            sort_order: item.sort_order,
-          };
-        }) as ICustomUploadFile[]
-      );
-      setIsEdit(false);
-    } else {
-      setIsEdit(true);
-    }
-  }, [dataGetImage]);
+  const hasImages = data.status === UPDATED;
+  // useEffect(() => {
+  //   if (hasImages) {
+  //     setFiles(
+  //       dataGetImage?.data?.map((item) => {
+  //         return {
+  //           name: item.file_name,
+  //           status: isLoading ? "uploading" : "done",
+  //           url: item.get_url,
+  //           file_id: item.id,
+  //           sort_order: item.sort_order,
+  //         };
+  //       }) as ICustomUploadFile[]
+  //     );
+  //     setIsEdit(false);
+  //   } else {
+  //     setIsEdit(true);
+  //   }
+  // }, [dataGetImage]);
 
   return (
     <div className="image-details-wrapper relative">
@@ -264,6 +271,7 @@ function ImageDetails({ data, refetch, access }: ImageDetailsProps) {
           </Button>
         )}
         <Modal
+          centered
           open={previewOpen}
           title={previewTitle}
           footer={null}

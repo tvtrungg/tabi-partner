@@ -5,7 +5,6 @@ import {
   SelectLang,
   useLocation,
   useNavigate,
-  Helmet,
 } from "@umijs/max";
 import { getLandingPath } from "@/utils/common";
 import {
@@ -41,16 +40,6 @@ function LandingLayout() {
 
   return (
     <div className="w-screen min-h-screen">
-      <Helmet>
-        <title>Tabi partner</title>
-        <meta property="og:title" content="Tabi partner" />
-
-        <meta property="og:image" content="/images/logo.png" />
-        <meta property="og:image:width" content="600" />
-        <meta property="og:image:height" content="600" />
-
-        <link rel="icon" href="/favicon.ico" />
-      </Helmet>
       <Access
         accessible={isLandingAccessible(location.pathname)}
         fallback={<NoFoundPage />}

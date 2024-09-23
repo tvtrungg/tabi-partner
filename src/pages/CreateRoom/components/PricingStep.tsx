@@ -19,7 +19,7 @@ import {
 import { Fragment, useEffect, useState } from "react";
 
 interface IPricingStepProps {
-  form: FormInstance<TCreationRoom>;
+  form: FormInstance<any>;
   snapshot?: TCreationRoomSnapshot;
   horizontal?: boolean;
 }
@@ -268,14 +268,16 @@ function PricingStep({ form, snapshot, horizontal }: IPricingStepProps) {
             })}
           >
             <Input
-              type="number"
               min={1}
               placeholder="0.00"
               className="px-2 py-1"
               suffix="VND"
               onChange={(e) => {
-                const value = e.target.value;
+                const value = removeComma(e.target.value);
                 setMaxPrice(Number(value));
+                form.setFieldsValue({
+                  max_price: formatCurrency(value),
+                });
               }}
             />
           </Form.Item>

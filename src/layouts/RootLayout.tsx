@@ -1,7 +1,6 @@
 import {
   Access,
   FormattedMessage,
-  Helmet,
   Outlet,
   SelectLang,
   useAccess,
@@ -23,7 +22,8 @@ import { useBackground } from "@/hooks/useTransparentBackground";
 import "./style.less";
 import { decryptToken } from "@/utils/crypter";
 import { keyLocalStorage } from "@/utils/local_storage";
-import { BOOKINGS, COMPANY, SIGN_IN } from "@/constants/link";
+import { BRANCH, COMPANY, SIGN_IN } from "@/constants/link";
+import logo from "@/assets/logo/logo.png";
 
 const { Header, Content, Sider } = Layout;
 
@@ -56,7 +56,7 @@ function RootLayout() {
       (access.isBM && currentKey === "") ||
       (access.isHST && currentKey === "")
     ) {
-      navigate(BOOKINGS);
+      navigate(BRANCH);
     }
   }, []);
 
@@ -76,16 +76,6 @@ function RootLayout() {
 
   return (
     <div className="w-screen min-h-screen">
-      <Helmet>
-        <title>Tabi partner</title>
-        <meta property="og:title" content="Tabi partner" />
-
-        <meta property="og:image" content="/images/logo.png" />
-        <meta property="og:image:width" content="600" />
-        <meta property="og:image:height" content="600" />
-
-        <link rel="icon" href="/favicon.ico" />
-      </Helmet>
       <AuthLayout>
         <Layout hasSider className="h-full w-full">
           <Sider
@@ -100,7 +90,7 @@ function RootLayout() {
               theme="light"
               mode="vertical"
               items={getMenuItems()}
-              className="fixed top-0 left-0 z-50 pt-4 text-base"
+              className="fixed top-0 left-0 z-50 pt-[60px] text-base"
               style={{
                 width: collapsed ? WIDTH_SIDE_BAR_COLLAPSED : WIDTH_SIDE_BAR,
                 borderInlineEnd: 0,
@@ -111,7 +101,25 @@ function RootLayout() {
                 navigate(`/${navItem.key}`);
               }}
             />
-            <div className="sticky top-3 z-50 w-full">
+            <div
+              className="fixed top-0 left-0 h-[60px] w-full flex items-center px-5 z-50"
+              style={{
+                justifyContent: collapsed ? "center" : "flex-start",
+                width: collapsed ? WIDTH_SIDE_BAR_COLLAPSED : WIDTH_SIDE_BAR,
+              }}
+            >
+              <img src={logo} alt="logo" className="size-[40px] object-cover" />
+              <span
+                className="text-xl text-primary-dominant font-bold transition-effect overflow-hidden whitespace-nowrap"
+                style={{
+                  width: collapsed ? "0" : "100%",
+                  marginLeft: collapsed ? "0" : "8px",
+                }}
+              >
+                Tabi Partner
+              </span>
+            </div>
+            <div className="sticky top-6 flex items-center justify-center z-50 w-full">
               <Button
                 type="text"
                 icon={collapsed ? <IoIosArrowForward /> : <IoIosArrowBack />}

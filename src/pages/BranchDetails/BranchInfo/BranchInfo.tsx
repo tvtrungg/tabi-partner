@@ -17,16 +17,14 @@ import {
   Divider,
   message,
 } from "antd";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaRegCircleCheck } from "react-icons/fa6";
 import { FiEdit } from "react-icons/fi";
-import { usePostBatchFilePresigned } from "@/services/file/services";
-import { convertToBatchFileRequest, uploadS3 } from "@/services/file/utils";
-import { fileQueryField } from "@/constants/fileQueryField";
 import LocationSelect from "@/components/core/LocationSelect";
 import AccommodationType from "@/components/core/AccommodationType";
 import Note from "@/components/common/Note";
 import BMInfo from "../BMInfo";
+import hotel from "@/assets/images/hotel_img.png";
 
 type TBranchInfo = {
   id: number;
@@ -38,18 +36,10 @@ type TBranchInfo = {
     isHST: boolean;
   };
   refetch: () => void;
-  dataGetImage: TListResponse<TFileResponse>;
 };
 const { TextArea } = Input;
 
-function BranchInfo({
-  id,
-  data,
-  locale,
-  access,
-  refetch,
-  dataGetImage,
-}: TBranchInfo) {
+function BranchInfo({ id, data, locale, access, refetch }: TBranchInfo) {
   const intl = useIntl();
   const [isBIModalOpen, setIsBIModalOpen] = useState(false);
   const [form] = Form.useForm<TUpdateBranch>();
@@ -70,43 +60,12 @@ function BranchInfo({
 
   const [files, setFiles] = useState<UploadFile<any>[]>([]);
 
-  const imageUrl = dataGetImage?.data[0]?.get_url;
-  const setInitialFile = () => {
-    const image = dataGetImage?.data[0];
-    const fileList = [
-      {
-        uid: image?.id.toString(),
-        name: image?.file_name,
-        status: "done",
-        url: image?.get_url,
-      } as UploadFile<any>,
-    ] as UploadFile<any>[];
-
-    setFiles(fileList);
-  };
-
-  const fileMutation = usePostBatchFilePresigned((resp) => {
-    uploadS3(resp, files).then(() => {
-      refetch();
-      setIsBIModalOpen(false);
-      message.success(
-        intl.formatMessage({
-          id: "pages.branch_details.branch_info.edit_success",
-        })
-      );
-    });
-  });
-
-  useEffect(() => {
-    setInitialFile();
-  }, [data, dataGetImage]);
-
   return (
     <>
       <div
         className="relative bg-img-custom w-full aspect-video rounded-2xl overflow-hidden min-w-[336px]"
         style={{
-          backgroundImage: `url(${imageUrl})`,
+          backgroundImage: `url(${hotel})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "top",
@@ -164,7 +123,7 @@ function BranchInfo({
           </Access>
         </div>
 
-        <Access accessible={access.isRP || access.isHST}>
+        <Access accessible={access.isRP}>
           <Access accessible={access.isRP}>
             <Divider orientation="left" orientationMargin={0}>
               <FormattedMessage id="pages.branch_details.bm_info.titleBM" />
@@ -235,9 +194,9 @@ function BranchInfo({
           }
           open={isBIModalOpen}
           okText="Save"
+          centered
           onCancel={() => {
             setIsBIModalOpen(false);
-            setInitialFile();
           }}
           width={850}
           className="top-5"
@@ -259,16 +218,7 @@ function BranchInfo({
                 }
 
                 values.full_address = `${values.address}, ${values.ward}, ${values.district}, ${values.province_city}`;
-                mutateUpdateBranch(values, {
-                  onSuccess: () => {
-                    const creation = convertToBatchFileRequest(files, {
-                      attachment_id: data.id,
-                      attachment_type: fileQueryField.branch.attachmentType,
-                      field: fileQueryField.branch.field.thumbnail,
-                    });
-                    fileMutation.mutate(creation);
-                  },
-                });
+                mutateUpdateBranch(values);
               })
               .catch(() => {});
           }}

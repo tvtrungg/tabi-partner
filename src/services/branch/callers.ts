@@ -4,10 +4,13 @@ import {
   BRANCH_BY_ID,
   CREATE_BM,
   UPDATE_ACTIVE_BRANCH,
-  BRANCH_BOOKING_ANALYSIS_PATH,
-  BRANCH_REVENUE_ANALYSIS_PATH,
+  // BRANCH_BOOKING_ANALYSIS_PATH,
+  // BRANCH_REVENUE_ANALYSIS_PATH,
 } from "./paths";
 import { interpolate } from "@/utils/common";
+import branchDetails from "./data/branchDetails.json";
+import bookingRequests from "./data/bookingRequests.json";
+import revenues from "./data/revenues.json";
 
 export const getBranches = async (
   l: number,
@@ -28,9 +31,11 @@ export const getBranches = async (
 };
 
 export const getBranchById = async (id: number) => {
-  return request(interpolate(BRANCH_BY_ID, { id }), {
-    method: "GET",
-  });
+  // return request(interpolate(BRANCH_BY_ID, { id }), {
+  //   method: "GET",
+  // });
+  const branch = branchDetails.find((branch) => branch.id === Number(id));
+  return branch as TBranchDetails;
 };
 
 export const updateBranch = async (id: number, branch_data: TUpdateBranch) => {
@@ -73,19 +78,31 @@ export const updateActiveBranch = async () => {
 };
 
 export const getBranchBookingAnalysis = async (year: string) => {
-  return request(BRANCH_BOOKING_ANALYSIS_PATH, {
-    method: "GET",
-    params: {
-      year,
-    },
-  });
+  // return request(BRANCH_BOOKING_ANALYSIS_PATH, {
+  //   method: "GET",
+  //   params: {
+  //     year,
+  //   },
+  // });
+
+  if (year === "") return bookingRequests;
+
+  const currentMonth = new Date().getMonth() + 1;
+  return bookingRequests.filter(
+    (bookingRequest) => bookingRequest.month <= currentMonth
+  );
 };
 
 export const getBranchRevenueAnalysis = async (year: string) => {
-  return request(BRANCH_REVENUE_ANALYSIS_PATH, {
-    method: "GET",
-    params: {
-      year,
-    },
-  });
+  // return request(BRANCH_REVENUE_ANALYSIS_PATH, {
+  //   method: "GET",
+  //   params: {
+  //     year,
+  //   },
+  // });
+
+  if (year === "") return revenues;
+
+  const currentMonth = new Date().getMonth() + 1;
+  return revenues.filter((revenue) => revenue.month <= currentMonth);
 };

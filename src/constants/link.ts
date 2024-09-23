@@ -2,6 +2,7 @@ export const RP_BRANCHES = "/branches";
 export const RP_BRANCHES_CREATE = "/branches/create";
 export const HOME = "/";
 export const COMPANY = "/company";
+export const BRANCH = "/branch";
 export const BOOKINGS = "/bookings";
 export const SIGN_IN = "/sign-in";
 export const SIGN_UP = "/sign-up";

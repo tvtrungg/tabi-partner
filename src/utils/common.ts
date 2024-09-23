@@ -48,8 +48,8 @@ export function interpolate(
 export function getTimeHourAndMinute(timeString: string): string {
   const inputTime = new Date(timeString);
 
-  const hours = inputTime.getUTCHours().toString().padStart(2, "0");
-  const minutes = inputTime.getUTCMinutes().toString().padStart(2, "0");
+  const hours = inputTime.getHours().toString().padStart(2, "0");
+  const minutes = inputTime.getMinutes().toString().padStart(2, "0");
 
   return `${hours}:${minutes}`;
 }

@@ -110,6 +110,7 @@ function BMInfo({ data, refetch }: TBMInfoProps) {
         title={<FormattedMessage id="pages.createBM.title" />}
         open={bmModal}
         okText="Save"
+        centered
         onCancel={() => {
           setBmModal(false);
           form.resetFields();

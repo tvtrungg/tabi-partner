@@ -2,7 +2,7 @@ const currentMonth = new Date().getMonth() + 1;
 const currentYear = new Date().getFullYear().toString();
 const monthStr = currentMonth < 10 ? `0${currentMonth}` : currentMonth;
 
-const listBookings = [
+export const listBookings = [
   {
     id: 1,
     user_id: 1,
@@ -186,40 +186,3 @@ const listBookings = [
     created_at: `${currentYear}-${monthStr}-02T05:00:00Z`,
   },
 ];
-
-export default {
-  "GET /partner/bookings": (req: Request, res: any) => {
-    const url = new URL(req.url || "", "http://localhost:8000");
-    let response = {};
-    let limit = 0;
-    url.searchParams.forEach((value, key) => {
-      if (key === "l") limit = Number(value);
-      if (key === "p") {
-        const page_n = Number(value);
-        const start = limit * (page_n - 1);
-        const end = limit * page_n;
-        response = listBookings.slice(start, end);
-      }
-      if (key === "f") {
-        const filter = JSON.parse(value);
-        response = listBookings.filter((booking: { [key: string]: any }) => {
-          for (const key in filter) {
-            if (booking[key] !== filter[key]) return false;
-          }
-          return true;
-        });
-      }
-    });
-    return res.status(200).send({ data: response, total: listBookings.length });
-  },
-  "GET /partner/rooms/:id/bookings": (req: Request, res: any) => {
-    const url = new URL(req.url || "", "http://localhost:8000");
-    const id = url.pathname.split("/")[3];
-
-    const resp = listBookings.filter(
-      (booking) => booking.room_id === Number(id) && booking.status === "APP"
-    );
-
-    return res.status(200).send({ data: resp, total: resp.length });
-  },
-};

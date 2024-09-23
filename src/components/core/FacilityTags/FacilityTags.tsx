@@ -64,6 +64,7 @@ function FacilityTags({ data, isVN, display_quantity }: TFacilityTagsProps) {
         open={showModal}
         okText=""
         closable={false}
+        centered
         onCancel={() => setShowModal(false)}
         okButtonProps={{
           className: "hidden",

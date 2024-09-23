@@ -20,8 +20,6 @@ import Facilities from "./Facilities";
 import BranchInfo from "./BranchInfo";
 import { useTransparentBackground } from "@/hooks/useTransparentBackground";
 import { BRANCH_MANAGER, HOST } from "@/constants/auth";
-import { useGetFiles } from "@/services/file/services";
-import { fileQueryField } from "@/constants/fileQueryField";
 import BranchPolicy from "./BranchPolicy";
 import ChartAnalysis from "@/components/common/ChartAnalysis";
 import { useState } from "react";
@@ -71,18 +69,7 @@ function BranchDetails() {
     }
   );
 
-  // get image
-  const {
-    data: dataGetImage,
-    isLoading: isLoadingGetImage,
-    refetch: refetchFile,
-  } = useGetFiles({
-    attachment_id: data?.id,
-    attachment_type: fileQueryField.branch.attachmentType,
-    field: fileQueryField.branch.field.thumbnail,
-  });
-
-  if (isLoading || isLoadingGetImage)
+  if (isLoading)
     return (
       <Row justify="center">
         <Spin />
@@ -122,9 +109,7 @@ function BranchDetails() {
               access={access}
               refetch={() => {
                 refetch();
-                refetchFile();
               }}
-              dataGetImage={dataGetImage as TListResponse<TFileResponse>}
             />
           </div>
         </Col>

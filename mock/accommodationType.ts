@@ -261,12 +261,9 @@ const accommodationTypeEn = [
 ];
 
 export default {
-  "GET /partner/general-types/accommodations/:lang": (
-    req: Request,
-    res: any
-  ) => {
+  "GET /general-types/accommodations/:lang": (req: Request, res: any) => {
     const url = new URL(req.url || "", "http://localhost:8000");
-    const lang = url.pathname.split("/")[4];
+    const lang = url.pathname.split("/")[3];
     let response = {
       data: [] as typeof accommodationTypeEn,
     };

@@ -83,7 +83,7 @@ export const errorConfig: RequestConfig = {
               window.location.href = SIGN_IN;
             }
           } else {
-            message.error("Error: " + data.message);
+            message.error("The server has been shut down");
           }
         }
       } else if (error.request) {

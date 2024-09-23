@@ -84,10 +84,7 @@ function RoomInfo({ id, data, locale, access, refetch }: TRoomInfoProps) {
           <Col span={10} className="font-normal text-sm">
             <FormattedMessage id={formatMessage} /> :
           </Col>
-          <Col
-            span={10}
-            className="ml-2 font-light text-sm hover:text-slate-500"
-          >
+          <Col span={10} className="ml-2 font-light text-sm">
             {value}
           </Col>
         </Row>
@@ -114,7 +111,7 @@ function RoomInfo({ id, data, locale, access, refetch }: TRoomInfoProps) {
             switch (data.status) {
               case PENDING:
                 return (
-                  <Tag color="blue" className="p-1 text-xs italic align-top">
+                  <Tag color="blue" className="p-1 text-xs align-top">
                     <FormattedMessage id="status.pending" />
                   </Tag>
                 );
@@ -122,14 +119,14 @@ function RoomInfo({ id, data, locale, access, refetch }: TRoomInfoProps) {
                 return (
                   <Tag
                     color="green"
-                    className="p-1 text-xs italic align-top text-green-500"
+                    className="p-1 text-xs align-top text-green-500"
                   >
                     <FormattedMessage id="status.approved" />
                   </Tag>
                 );
               case UPDATED:
                 return (
-                  <Tag color="warning" className="p-1 text-xs italic align-top">
+                  <Tag color="warning" className="p-1 text-xs align-top">
                     <FormattedMessage id="status.updated" />
                   </Tag>
                 );
@@ -233,6 +230,7 @@ function RoomInfo({ id, data, locale, access, refetch }: TRoomInfoProps) {
           setIsBIModalOpen(false);
           form.resetFields();
         }}
+        centered
         closeIcon={true}
         onOk={() => {
           form

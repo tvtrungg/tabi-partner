@@ -11,17 +11,12 @@ import {
   Tag,
   Tooltip,
   Typography,
-  message,
 } from "antd";
 import { Fragment, useState } from "react";
 import type { ColumnsType } from "antd/es/table";
 import { formatDate } from "@/utils/convert_timestamp";
 import { formatCurrency } from "@/utils/common";
-import {
-  useApproveBooking,
-  useGetBookings,
-  useRejectBooking,
-} from "@/services/booking/services";
+import { useGetBookings } from "@/services/booking/services";
 import { QuestionCircleOutlined } from "@ant-design/icons";
 import {
   APPROVED,
@@ -73,21 +68,13 @@ function Bookings() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalReasonOpen, setIsModalReasonOpen] = useState(false);
   const [cancelBookingId, setCancelBookingId] = useState<number | null>(null);
-  const [rejectBookingId, setRejectBookingId] = useState<number | null>(null);
   const [form] = Form.useForm<TRejectRequest>();
   const [filter, setFilter] = useState<{ [key: string]: any }>({});
   const isFilterNotEmpty = Object.keys(filter).length > 0;
 
   const { currentPage, handlePageChanges } = usePagination();
 
-  const { data, isLoading, refetch } = useGetBookings(
-    pageLimit,
-    currentPage,
-    filter
-  );
-
-  const { mutate: mutateApproveStatus } = useApproveBooking();
-  const { mutate: mutateRejectStatus } = useRejectBooking();
+  const { data, isLoading } = useGetBookings(pageLimit, currentPage, filter);
 
   const GuestInfoTooltip = (record: TBookingsList) => (
     <div className="px-3">
@@ -376,18 +363,7 @@ function Bookings() {
                 }
                 icon={<QuestionCircleOutlined style={{ color: "green" }} />}
                 className=""
-                onConfirm={() => {
-                  mutateApproveStatus(record.id, {
-                    onSuccess: () => {
-                      refetch();
-                      message.success(
-                        intl.formatMessage({
-                          id: "pages.booking.approve_success",
-                        })
-                      );
-                    },
-                  });
-                }}
+                onConfirm={() => {}}
                 cancelText={<FormattedMessage id="cancel" />}
                 okText={<FormattedMessage id="approve" />}
               >
@@ -398,14 +374,18 @@ function Bookings() {
                   <FaCheckCircle className="text-xl text-green-500 hover:text-green-400 mr-2" />
                 </Tooltip>
               </Popconfirm>
-              <FaTimesCircle
-                className="text-xl text-primary-dominant hover:text-primary-dominant-light"
-                onClick={() => {
-                  setIsModalOpen(true);
-                  setCancelBookingId(record.id);
-                  setRejectBookingId(record.id);
-                }}
-              />
+
+              <Tooltip
+                placement="bottom"
+                title={<FormattedMessage id="reject" />}
+              >
+                <FaTimesCircle
+                  className="text-xl text-primary-dominant hover:text-primary-dominant-light"
+                  onClick={() => {
+                    setIsModalOpen(true);
+                  }}
+                />
+              </Tooltip>
             </Text>
           );
         } else if (record.status === CANCELLED) {
@@ -426,6 +406,7 @@ function Bookings() {
                 closeIcon={false}
                 maskClosable={true}
                 footer={null}
+                centered
                 onCancel={() => {
                   setIsModalReasonOpen(false);
                 }}
@@ -467,8 +448,6 @@ function Bookings() {
           onChange: (page) => handlePageChanges(page),
         }}
         scroll={{ x: 1500 }}
-        rowClassName="customize-table-rows"
-        className="custom-hidden-table"
       />
       <Modal
         title={
@@ -476,33 +455,13 @@ function Bookings() {
         }
         open={isModalOpen}
         okText="Save"
+        centered
         onCancel={() => {
           setIsModalOpen(false);
         }}
         closeIcon={false}
         onOk={() => {
-          form
-            .validateFields()
-            .then((values) => {
-              if (rejectBookingId !== null) {
-                mutateRejectStatus(
-                  { id: rejectBookingId, reason: values.reason },
-                  {
-                    onSuccess: () => {
-                      refetch();
-                      message.success(
-                        intl.formatMessage({
-                          id: "pages.booking.reject_success",
-                        })
-                      );
-                    },
-                  }
-                );
-                setRejectBookingId(null);
-                setIsModalOpen(false);
-              }
-            })
-            .catch(() => {});
+          setIsModalOpen(false);
         }}
       >
         <Form

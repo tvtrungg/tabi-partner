@@ -111,7 +111,7 @@ function RoomTypes() {
         </h1>
         <Button
           type="primary"
-          className="text-base font-semibold pt-1"
+          className="text-base font-semibold size-8"
           onClick={() => setIsOpenCreateRoomTypeModal(true)}
         >
           <FaPlus />
@@ -148,6 +148,7 @@ function RoomTypes() {
       />
       <Modal
         forceRender
+        centered
         title={<FormattedMessage id="roomType.createRoomTypeForm.title" />}
         open={isOpenCreateRoomTypeModal}
         okText={<FormattedMessage id="roomType.createRoomTypeForm.buttonOk" />}
@@ -294,6 +295,7 @@ function RoomTypes() {
       </Modal>
       <Modal
         forceRender
+        centered
         title={<FormattedMessage id="roomType.editRoomTypeForm.title" />}
         open={isOpenEditDialog}
         okText={<FormattedMessage id="roomType.editRoomTypeForm.buttonOk" />}

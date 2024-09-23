@@ -1,1040 +1,684 @@
-const mainFacilityVi = [
+const generalTypes = [
   {
-    class: "Cơ sở vật chất",
-    items: [
-      {
-        id: 105,
-        name: "Bãi đỗ xe",
-      },
-      {
-        id: 109,
-        name: "Cửa hàng",
-      },
-      {
-        id: 106,
-        name: "Cửa hàng quà tặng",
-      },
-      {
-        id: 108,
-        name: "Hòm đựng đồ vật giá trị",
-      },
-      {
-        id: 107,
-        name: "Máy sấy tóc",
-      },
-      {
-        id: 104,
-        name: "Tiệm làm đẹp",
-      },
-    ],
+    id: 11,
+    class: "HOTEL_ACCOMMODATION",
+    label_en: "Ryokan",
+    label_vi: "Ryokan",
+    desc_en: "A traditional Japanese inn that offers accommodation with meals.",
+    desc_vi:
+      "Một ký túc xá truyền thống của Nhật Bản cung cấp chỗ ở kèm theo bữa ăn.",
+    order: 2,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Dịch vụ",
-    items: [
-      {
-        id: 19,
-        name: "Dịch vụ chuyển đưa",
-      },
-      {
-        id: 20,
-        name: "Dịch vụ đậu xe",
-      },
-      {
-        id: 14,
-        name: "Dịch vụ đưa đón hành lý",
-      },
-      {
-        id: 17,
-        name: "Kho để hành lý",
-      },
-      {
-        id: 15,
-        name: "Lễ tân",
-      },
-      {
-        id: 16,
-        name: "Người gác cửa",
-      },
-      {
-        id: 18,
-        name: "Người mang hành lý",
-      },
-    ],
+    id: 10,
+    class: "HOTEL_ACCOMMODATION",
+    label_en: "Riad",
+    label_vi: "Riad",
+    desc_en:
+      "A traditional Morrocan house or palace that offers accommodation.",
+    desc_vi:
+      "Một ngôi nhà hoặc cung điện truyền thống ở Ma-rốc cung cấp chỗ ở.",
+    order: 2,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Đồ uống \u0026 Ăn uống",
-    items: [
-      {
-        id: 1,
-        name: "Lò nướng ngoài trời",
-      },
-      {
-        id: 3,
-        name: "Nhà hàng phục vụ bữa sáng",
-      },
-      {
-        id: 4,
-        name: "Quán ăn nhanh",
-      },
-      {
-        id: 2,
-        name: "Quán cà phê",
-      },
-    ],
+    id: 9,
+    class: "HOTEL_ACCOMMODATION",
+    label_en: "Resort",
+    label_vi: "Khu nghỉ dưỡng",
+    desc_en:
+      "A complex of accommodation that offers private rooms and recreational facilities.",
+    desc_vi:
+      "Một quần thể nơi lưu trú cung cấp phòng riêng và các cơ sở vui chơi giải trí.",
+    order: 2,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Du lịch cùng người khác",
-    items: [
-      {
-        id: 102,
-        name: "Câu lạc bộ trẻ em",
-      },
-      {
-        id: 103,
-        name: "Dịch vụ chăm sóc trẻ được giám sát",
-      },
-      {
-        id: 101,
-        name: "Dịch vụ thuê xe đạp",
-      },
-    ],
+    id: 8,
+    class: "HOTEL_ACCOMMODATION",
+    label_en: "Hotel",
+    label_vi: "Khách sạn",
+    desc_en:
+      "A commercial accommodation that provides private rooms with meals and guest services.",
+    desc_vi:
+      "Một nơi lưu trú thương mại cung cấp phòng riêng với bữa ăn và dịch vụ cho khách.",
+    order: 2,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Giao thông",
-    items: [
-      {
-        id: 96,
-        name: "Chuyển đưa sân bay",
-      },
-      {
-        id: 99,
-        name: "Chuyến xe trượt tuyết",
-      },
-      {
-        id: 98,
-        name: "Dịch vụ đưa đón từ cảng phà",
-      },
-      {
-        id: 100,
-        name: "Đón từ ga xe lửa",
-      },
-      {
-        id: 97,
-        name: "Thuê xe",
-      },
-    ],
+    id: 7,
+    class: "HOTEL_ACCOMMODATION",
+    label_en: "Hostel",
+    label_vi: "Nhà trọ",
+    desc_en:
+      "A budget accommodation that provides lodging, usually with dorm-style beds.",
+    desc_vi:
+      "Nơi lưu trú ngân sách cung cấp chỗ ở, thường là giường dạng ký túc xá.",
+    order: 2,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Hoạt động",
-    items: [
-      {
-        id: 71,
-        name: "Bắn cung",
-      },
-      {
-        id: 90,
-        name: "Bể bơi hơi",
-      },
-      {
-        id: 84,
-        name: "Bến du thuyền",
-      },
-      {
-        id: 74,
-        name: "Bida",
-      },
-      {
-        id: 89,
-        name: "Bơi lội ngắn",
-      },
-      {
-        id: 80,
-        name: "Câu cá",
-      },
-      {
-        id: 88,
-        name: "Chèo thuyền",
-      },
-      {
-        id: 77,
-        name: "Chương trình giải trí dành cho người lớn",
-      },
-      {
-        id: 78,
-        name: "Chương trình giải trí dành cho trẻ em",
-      },
-      {
-        id: 87,
-        name: "Đi chơi thuyền bằng chân",
-      },
-      {
-        id: 79,
-        name: "Dịch vụ đưa đón hành khách từ cảng phà",
-      },
-      {
-        id: 85,
-        name: "Di động",
-      },
-      {
-        id: 92,
-        name: "Đưa đón từ khu vui chơi",
-      },
-      {
-        id: 81,
-        name: "Gôn",
-      },
-      {
-        id: 86,
-        name: "Hộp đêm",
-      },
-      {
-        id: 82,
-        name: "Jet ski",
-      },
-      {
-        id: 83,
-        name: "Karaoke",
-      },
-      {
-        id: 72,
-        name: "Kho để xe đạp",
-      },
-      {
-        id: 76,
-        name: "Lặn",
-      },
-      {
-        id: 95,
-        name: "Lướt sóng",
-      },
-      {
-        id: 91,
-        name: "Lướt ván",
-      },
-      {
-        id: 94,
-        name: "Môn thể thao nước",
-      },
-      {
-        id: 75,
-        name: "Phi tiêu",
-      },
-      {
-        id: 73,
-        name: "Trò chơi bóng lỗ",
-      },
-      {
-        id: 93,
-        name: "Truy cập khu vui chơi nước",
-      },
-    ],
+    id: 6,
+    class: "HOTEL_ACCOMMODATION",
+    label_en: "Homestay",
+    label_vi: "Chỗ ở theo kiểu Homestay",
+    desc_en:
+      "A budget accommodation where the guest has private room while sharing some shared areas with other guests.",
+    desc_vi:
+      "Một nơi lưu trú ngân sách nơi khách có phòng riêng nhưng phải chia sẻ một số khu vực chung với khách khác.",
+    order: 2,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Kết nối mạng",
-    items: [
-      {
-        id: 53,
-        name: "Điểm internet",
-      },
-      {
-        id: 55,
-        name: "Khu vực công cộng có Wifi",
-      },
-      {
-        id: 56,
-        name: "Phí sử dụng Wifi",
-      },
-      {
-        id: 54,
-        name: "Truy cập internet LAN",
-      },
-    ],
+    id: 5,
+    class: "HOTEL_ACCOMMODATION",
+    label_en: "Guest House",
+    label_vi: "Nhà khách",
+    desc_en:
+      "Small commercial accommodation that usually converted from a private house.",
+    desc_vi:
+      "Nơi lưu trú thương mại nhỏ thường được chuyển đổi từ ngôi nhà riêng.",
+    order: 2,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Khả năng tiếp cận",
-    items: [
-      {
-        id: 24,
-        name: "Biển hiệu chữ nổi hoặc chữ Braille",
-      },
-      {
-        id: 23,
-        name: "Đường đi dành cho người khuyết tật",
-      },
-      {
-        id: 25,
-        name: "Phòng tắm dành cho người di chuyển bằng xe lăn",
-      },
-      {
-        id: 22,
-        name: "Phòng tắm tiện nghi",
-      },
-      {
-        id: 21,
-        name: "Thiết bị tiện nghi",
-      },
-    ],
+    id: 4,
+    class: "HOTEL_ACCOMMODATION",
+    label_en: "Capsule Hotel",
+    label_vi: "Khách sạn Capsule",
+    desc_en:
+      "Small unit of capsule accommodation that offers lodging with basic overnight accommodation.",
+    desc_vi: "Đơn vị nhà nghỉ dạng cá nhân cung cấp chỗ ở cơ bản qua đêm.",
+    order: 2,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Kinh doanh",
-    items: [
-      {
-        id: 28,
-        name: "Dịch vụ thư ký",
-      },
-      {
-        id: 27,
-        name: "Phòng họp",
-      },
-      {
-        id: 26,
-        name: "Trung tâm kinh doanh",
-      },
-    ],
+    id: 3,
+    class: "HOTEL_ACCOMMODATION",
+    label_en: "Bed and Breakfast",
+    label_vi: "Chỗ ở kiểu Bed and Breakfast",
+    desc_en:
+      "Small commercial accommodation or private home that offers overnight stay with breakfast.",
+    desc_vi:
+      "Chỗ ở thương mại nhỏ hoặc nhà riêng cung cấp nơi nghỉ qua đêm với bữa sáng.",
+    order: 2,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Phổ thông",
-    items: [
-      {
-        id: 43,
-        name: "Báo trong sảnh",
-      },
-      {
-        id: 51,
-        name: "Bữa ăn chay",
-      },
-      {
-        id: 30,
-        name: "Chuyển đưa sân bay",
-      },
-      {
-        id: 50,
-        name: "Dịch vụ đậu xe",
-      },
-      {
-        id: 40,
-        name: "Dịch vụ giặt là",
-      },
-      {
-        id: 46,
-        name: "Dịch vụ phòng",
-      },
-      {
-        id: 29,
-        name: "Điều hòa không khí",
-      },
-      {
-        id: 39,
-        name: "Ghế dành cho trẻ em",
-      },
-      {
-        id: 41,
-        name: "Kho để hành lý",
-      },
-      {
-        id: 48,
-        name: "Không hút thuốc",
-      },
-      {
-        id: 44,
-        name: "Khu vực đậu xe",
-      },
-      {
-        id: 47,
-        name: "Khu vực hút thuốc",
-      },
-      {
-        id: 37,
-        name: "Khu vườn",
-      },
-      {
-        id: 35,
-        name: "Lễ tân",
-      },
-      {
-        id: 31,
-        name: "Máy ATM hoặc ngân hàng",
-      },
-      {
-        id: 45,
-        name: "Nhà hàng",
-      },
-      {
-        id: 42,
-        name: "Nhân viên nhiều ngôn ngữ",
-      },
-      {
-        id: 34,
-        name: "Phòng để đồ",
-      },
-      {
-        id: 52,
-        name: "Phòng tiện nghi cho người khuyết tật",
-      },
-      {
-        id: 32,
-        name: "Quán bar",
-      },
-      {
-        id: 49,
-        name: "Sân thượng",
-      },
-      {
-        id: 33,
-        name: "Sòng bạc",
-      },
-      {
-        id: 36,
-        name: "Thang máy",
-      },
-      {
-        id: 38,
-        name: "Tiệm làm tóc",
-      },
-    ],
+    id: 2,
+    class: "HOTEL_ACCOMMODATION",
+    label_en: "Serviced Apartment",
+    label_vi: "Căn hộ dịch vụ",
+    desc_en:
+      "Furnished residential in an apartment building that provides private rooms with hotel-like services.",
+    desc_vi:
+      "Căn hộ được trang bị đầy đủ trong tòa nhà chung cư cung cấp phòng riêng với dịch vụ như ở khách sạn.",
+    order: 2,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Thể thao \u0026 Giải trí",
-    items: [
-      {
-        id: 64,
-        name: "Bể bơi",
-      },
-      {
-        id: 58,
-        name: "Dịch vụ thuê xe đạp",
-      },
-      {
-        id: 62,
-        name: "Điều khiển ngựa",
-      },
-      {
-        id: 63,
-        name: "Gôn nhỏ",
-      },
-      {
-        id: 60,
-        name: "Phòng chơi game",
-      },
-      {
-        id: 68,
-        name: "Phòng tắm hơi ẩm",
-      },
-      {
-        id: 65,
-        name: "Phòng xông hơi",
-      },
-      {
-        id: 69,
-        name: "Quầy bar bên bể bơi",
-      },
-      {
-        id: 61,
-        name: "Sân golf",
-      },
-      {
-        id: 67,
-        name: "Sân thể thao",
-      },
-      {
-        id: 66,
-        name: "Spa",
-      },
-      {
-        id: 70,
-        name: "Tennis",
-      },
-      {
-        id: 57,
-        name: "Thể dục nhịp điệu",
-      },
-      {
-        id: 59,
-        name: "Trung tâm thể dục",
-      },
-    ],
+    id: 1,
+    class: "HOTEL_ACCOMMODATION",
+    label_en: "Hotel",
+    label_vi: "Khách sạn",
+    desc_en:
+      "A commercial accommodation that provides private rooms with meals and guest service.",
+    desc_vi:
+      "Một nơi lưu trú thương mại cung cấp phòng riêng với bữa ăn và dịch vụ cho khách.",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Tiện ích lân cận",
-    items: [
-      {
-        id: 12,
-        name: "Cửa hàng tạp hóa",
-      },
-      {
-        id: 11,
-        name: "Máy ATM hoặc ngân hàng",
-      },
-      {
-        id: 13,
-        name: "Siêu thị",
-      },
-    ],
+    id: 18,
+    class: "UNIQUE_ACCOMMODATION",
+    label_en: "Unique Accommodation",
+    label_vi: "Chỗ ở độc đáo",
+    desc_en:
+      "A place of stay that is not common to be used as an accommodation, such as boat house, camp, and so on.",
+    desc_vi:
+      "Một nơi lưu trú không phổ biến như làm nơi ở như nhà trên thuyền, trại và các loại chỗ ở khác.",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Trong phòng",
-    items: [
-      {
-        id: 8,
-        name: "Bếp nhỏ",
-      },
-      {
-        id: 5,
-        name: "Đầu đĩa DVD",
-      },
-      {
-        id: 9,
-        name: "Lò vi sóng",
-      },
-      {
-        id: 6,
-        name: "Tiện nghi tiếp cận trong phòng",
-      },
-      {
-        id: 10,
-        name: "Ti vi",
-      },
-      {
-        id: 7,
-        name: "Tủ an toàn trong phòng",
-      },
-    ],
-  },
-];
-
-const mainFacilityEn = [
-  {
-    class: "Accessibility",
-    items: [
-      {
-        id: 21,
-        name: "Accessibility Equipment",
-      },
-      {
-        id: 22,
-        name: "Accessible Bathroom",
-      },
-      {
-        id: 23,
-        name: "Accessible Path Of Travel",
-      },
-      {
-        id: 24,
-        name: "Braille Or Raised Signage",
-      },
-      {
-        id: 25,
-        name: "Roll In Shower",
-      },
-    ],
+    id: 17,
+    class: "APARTMENT_ACCOMMODATION",
+    label_en: "Entire Apartment",
+    label_vi: "Toàn bộ căn hộ",
+    desc_en:
+      "Guests will have the whole place to themselves—they don't have to share facilities with other guests such as bathrooms, common rooms, and kitchen.",
+    desc_vi:
+      "Khách sẽ có toàn bộ nơi ở cho riêng mình—họ không cần phải chia sẻ các tiện nghi như phòng tắm, phòng chung và nhà bếp với khách khác.",
+    order: 2,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Business",
-    items: [
-      {
-        id: 26,
-        name: "Business Center",
-      },
-      {
-        id: 27,
-        name: "Conference Room",
-      },
-      {
-        id: 28,
-        name: "Secretarial Service",
-      },
-    ],
+    id: 16,
+    class: "APARTMENT_ACCOMMODATION",
+    label_en: "Private Room",
+    label_vi: "Phòng riêng",
+    desc_en:
+      "Guests will only have a private room for themselves. They will need to share common room, kitchen, or bathroom with other guests/host.",
+    desc_vi:
+      "Khách chỉ có một phòng riêng cho họ. Họ sẽ cần phải chia sẻ phòng chung, nhà bếp hoặc phòng tắm với khách khác/chủ nhà.",
+    order: 2,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Common",
-    items: [
-      {
-        id: 29,
-        name: "Air Conditioning",
-      },
-      {
-        id: 30,
-        name: "Airport Transfer",
-      },
-      {
-        id: 31,
-        name: "Atm Or Banking",
-      },
-      {
-        id: 32,
-        name: "Bar",
-      },
-      {
-        id: 33,
-        name: "Casino",
-      },
-      {
-        id: 34,
-        name: "Cloakroom",
-      },
-      {
-        id: 35,
-        name: "Concierge",
-      },
-      {
-        id: 36,
-        name: "Elevator",
-      },
-      {
-        id: 37,
-        name: "Garden",
-      },
-      {
-        id: 38,
-        name: "Hair Salon",
-      },
-      {
-        id: 39,
-        name: "Highchairs",
-      },
-      {
-        id: 40,
-        name: "Laundry Service",
-      },
-      {
-        id: 41,
-        name: "Luggage Storage",
-      },
-      {
-        id: 42,
-        name: "Multilingual Staff",
-      },
-      {
-        id: 43,
-        name: "Newspaper In Lobby",
-      },
-      {
-        id: 44,
-        name: "Parking Area",
-      },
-      {
-        id: 45,
-        name: "Restaurant",
-      },
-      {
-        id: 46,
-        name: "Room Service",
-      },
-      {
-        id: 47,
-        name: "Smoking Area",
-      },
-      {
-        id: 48,
-        name: "Smoking Free",
-      },
-      {
-        id: 49,
-        name: "Terrace",
-      },
-      {
-        id: 50,
-        name: "Valet Parking",
-      },
-      {
-        id: 51,
-        name: "Vegetarian Meal",
-      },
-      {
-        id: 52,
-        name: "Wheelchair Accessible",
-      },
-    ],
+    id: 15,
+    class: "APARTMENT_ACCOMMODATION",
+    label_en: "Apartment",
+    label_vi: "Căn hộ",
+    desc_en:
+      "Furnished residential that provides private rooms and located in an apartment building.",
+    desc_vi:
+      "Nơi lưu trú được trang bị đầy đủ cung cấp phòng riêng và nằm trong tòa nhà chung cư.",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Connectivity",
-    items: [
-      {
-        id: 53,
-        name: "Internet Point",
-      },
-      {
-        id: 54,
-        name: "Lan Internet Access",
-      },
-      {
-        id: 55,
-        name: "Wifi Public Area",
-      },
-      {
-        id: 56,
-        name: "Wifi Surcharge",
-      },
-    ],
+    id: 14,
+    class: "HOUSE_ACCOMMODATION",
+    label_en: "Entire House",
+    label_vi: "Toàn bộ ngôi nhà",
+    desc_en:
+      "Guests will have the whole place to themselves—they don't have to share facilities such as bathrooms, common rooms, and kitchen with other guests.",
+    desc_vi:
+      "Khách sẽ có toàn bộ nơi ở cho riêng mình—họ không cần phải chia sẻ các tiện nghi như phòng tắm, phòng chung và nhà bếp với khách khác.",
+    order: 2,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Facilities",
-    items: [
-      {
-        id: 104,
-        name: "Beauty Salon",
-      },
-      {
-        id: 105,
-        name: "Carpark",
-      },
-      {
-        id: 106,
-        name: "Gift Shop",
-      },
-      {
-        id: 107,
-        name: "Hair Dryer",
-      },
-      {
-        id: 108,
-        name: "Safety Deposit Box",
-      },
-      {
-        id: 109,
-        name: "Shops",
-      },
-    ],
+    id: 13,
+    class: "HOUSE_ACCOMMODATION",
+    label_en: "Private Room",
+    label_vi: "Phòng riêng",
+    desc_en:
+      "Guests will only have a private room for themselves. They will need to share common room, kitchen, or bathroom with other guests/host.",
+    desc_vi:
+      "Khách chỉ có một phòng riêng cho họ. Họ sẽ cần phải chia sẻ phòng chung, nhà bếp hoặc phòng tắm với khách khác/chủ nhà.",
+    order: 2,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Food \u0026 Drinks",
-    items: [
-      {
-        id: 1,
-        name: "Barbecue Grill",
-      },
-      {
-        id: 2,
-        name: "Cafe",
-      },
-      {
-        id: 3,
-        name: "Restaurant For Breakfast",
-      },
-      {
-        id: 4,
-        name: "Snack Bar",
-      },
-    ],
+    id: 12,
+    class: "HOUSE_ACCOMMODATION",
+    label_en: "House",
+    label_vi: "Nhà",
+    desc_en:
+      "A furnished house that offers accommodation and is rented out as an entire place.",
+    desc_vi:
+      "Một ngôi nhà được trang bị đầy đủ cung cấp chỗ ở và được cho thuê làm toàn bộ nơi ở.",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Inside Room",
-    items: [
-      {
-        id: 5,
-        name: "Dvd Player",
-      },
-      {
-        id: 6,
-        name: "In Room Accessibility",
-      },
-      {
-        id: 7,
-        name: "In Room Safe",
-      },
-      {
-        id: 8,
-        name: "Kitchenette",
-      },
-      {
-        id: 9,
-        name: "Microwave",
-      },
-      {
-        id: 10,
-        name: "Television",
-      },
-    ],
+    id: 48,
+    class: "BED",
+    label_en: "Couch",
+    label_vi: "Ghế Sofa",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Nearby Amenities",
-    items: [
-      {
-        id: 11,
-        name: "Atm Or Banking",
-      },
-      {
-        id: 12,
-        name: "Grocery",
-      },
-      {
-        id: 13,
-        name: "Supermarket",
-      },
-    ],
+    id: 49,
+    class: "BED",
+    label_en: "Capsule",
+    label_vi: "Ốc",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Service",
-    items: [
-      {
-        id: 14,
-        name: "Bellboy Service",
-      },
-      {
-        id: 15,
-        name: "Concierge",
-      },
-      {
-        id: 16,
-        name: "Doorman",
-      },
-      {
-        id: 17,
-        name: "Luggage Storage",
-      },
-      {
-        id: 18,
-        name: "Porter",
-      },
-      {
-        id: 19,
-        name: "Transfer Service",
-      },
-      {
-        id: 20,
-        name: "Valet Parking",
-      },
-    ],
+    id: 50,
+    class: "BED",
+    label_en: "Sofa Bed",
+    label_vi: "Sofa Bed",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Sports \u0026 Recreation",
-    items: [
-      {
-        id: 57,
-        name: "Aerobics",
-      },
-      {
-        id: 58,
-        name: "Bicycle Hire Service",
-      },
-      {
-        id: 59,
-        name: "Fitness Center",
-      },
-      {
-        id: 60,
-        name: "Game Room",
-      },
-      {
-        id: 61,
-        name: "Golf Course",
-      },
-      {
-        id: 62,
-        name: "Horse Riding",
-      },
-      {
-        id: 63,
-        name: "Mini Golf",
-      },
-      {
-        id: 64,
-        name: "Pool",
-      },
-      {
-        id: 65,
-        name: "Sauna",
-      },
-      {
-        id: 66,
-        name: "Spa",
-      },
-      {
-        id: 67,
-        name: "Sport Court",
-      },
-      {
-        id: 68,
-        name: "Steam Bath",
-      },
-      {
-        id: 69,
-        name: "Swimup Bar",
-      },
-      {
-        id: 70,
-        name: "Tennis",
-      },
-    ],
+    id: 51,
+    class: "BED",
+    label_en: "Bunk",
+    label_vi: "Tầng",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Things To Do",
-    items: [
-      {
-        id: 71,
-        name: "Archery",
-      },
-      {
-        id: 72,
-        name: "Bicycle Storage",
-      },
-      {
-        id: 73,
-        name: "Bocce",
-      },
-      {
-        id: 74,
-        name: "Bowling Alley",
-      },
-      {
-        id: 75,
-        name: "Darts",
-      },
-      {
-        id: 76,
-        name: "Diving",
-      },
-      {
-        id: 77,
-        name: "Entertainment Programme For Adults",
-      },
-      {
-        id: 78,
-        name: "Entertainment Programme For Children",
-      },
-      {
-        id: 79,
-        name: "Ferry Terminal Shuttle",
-      },
-      {
-        id: 80,
-        name: "Fishing",
-      },
-      {
-        id: 81,
-        name: "Golf",
-      },
-      {
-        id: 82,
-        name: "Jet Ski",
-      },
-      {
-        id: 83,
-        name: "Karaoke",
-      },
-      {
-        id: 84,
-        name: "Marina",
-      },
-      {
-        id: 85,
-        name: "Mobile",
-      },
-      {
-        id: 86,
-        name: "Nightclub",
-      },
-      {
-        id: 87,
-        name: "Pedal Boating",
-      },
-      {
-        id: 88,
-        name: "Sailing",
-      },
-      {
-        id: 89,
-        name: "Snorkeling",
-      },
-      {
-        id: 90,
-        name: "Steam Bath",
-      },
-      {
-        id: 91,
-        name: "Surfing",
-      },
-      {
-        id: 92,
-        name: "Theme Park Shuttle",
-      },
-      {
-        id: 93,
-        name: "Water Park Access",
-      },
-      {
-        id: 94,
-        name: "Water Sport",
-      },
-      {
-        id: 95,
-        name: "Windsurfing",
-      },
-    ],
+    id: 52,
+    class: "BED",
+    label_en: "Mattress",
+    label_vi: "Nệm",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Transportation",
-    items: [
-      {
-        id: 96,
-        name: "Airport Transfer",
-      },
-      {
-        id: 97,
-        name: "Car Hire",
-      },
-      {
-        id: 98,
-        name: "Ferry Terminal Shuttle",
-      },
-      {
-        id: 99,
-        name: "Ski Shuttle",
-      },
-      {
-        id: 100,
-        name: "Train Station Pickup",
-      },
-    ],
+    id: 21,
+    class: "BED",
+    label_en: "Single",
+    label_vi: "Đơn",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
   {
-    class: "Traveling With Others",
-    items: [
-      {
-        id: 101,
-        name: "Bicycle Hire Service",
-      },
-      {
-        id: 102,
-        name: "Children Club",
-      },
-      {
-        id: 103,
-        name: "Supervised Childcare",
-      },
-    ],
+    id: 22,
+    class: "BED",
+    label_en: "Double",
+    label_vi: "Đôi",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 23,
+    class: "BED",
+    label_en: "Twin",
+    label_vi: "Đôi",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 24,
+    class: "BED",
+    label_en: "Queen",
+    label_vi: "Nữ Hoàng",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 25,
+    class: "BED",
+    label_en: "King",
+    label_vi: "Vua",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 26,
+    class: "BED",
+    label_en: "One Single Bed",
+    label_vi: "Một Giường Đơn",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 27,
+    class: "BED",
+    label_en: "One Double Bed",
+    label_vi: "Một Giường Đôi",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 28,
+    class: "BED",
+    label_en: "One Queen Bed",
+    label_vi: "Một Giường Nữ Hoàng",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 29,
+    class: "BED",
+    label_en: "One King Bed",
+    label_vi: "Một Giường Vua",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 30,
+    class: "BED",
+    label_en: "One Double Bed and One Single Bed",
+    label_vi: "Một Giường Đôi và Một Giường Đơn",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 31,
+    class: "BED",
+    label_en: "One Double Bed and Two Single Bed",
+    label_vi: "Một Giường Đôi và Hai Giường Đơn",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 32,
+    class: "BED",
+    label_en: "One Double Bed and Four Single Bed",
+    label_vi: "Một Giường Đôi và Bốn Giường Đơn",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 33,
+    class: "BED",
+    label_en: "One Double Bed or Two Single Bed",
+    label_vi: "Một Giường Đôi hoặc Hai Giường Đơn",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 34,
+    class: "BED",
+    label_en: "Two Single Bed",
+    label_vi: "Hai Giường Đơn",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 35,
+    class: "BED",
+    label_en: "Two Double Bed",
+    label_vi: "Hai Giường Đôi",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 36,
+    class: "BED",
+    label_en: "Two Queen Bed",
+    label_vi: "Hai Giường Nữ Hoàng",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 37,
+    class: "BED",
+    label_en: "Two King Bed",
+    label_vi: "Hai Giường Vua",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 38,
+    class: "BED",
+    label_en: "Two Double and Two Single Bed",
+    label_vi: "Hai Giường Đôi và Hai Giường Đơn",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 39,
+    class: "BED",
+    label_en: "Two Double and One Single Bed",
+    label_vi: "Hai Giường Đôi và Một Giường Đơn",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 40,
+    class: "BED",
+    label_en: "One King Bed and One Sofa Bed",
+    label_vi: "Một Giường Vua và Một Sofa Bed",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 41,
+    class: "BED",
+    label_en: "One King Bed and Two Single Bed",
+    label_vi: "Một Giường Vua và Hai Giường Đơn",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 42,
+    class: "BED",
+    label_en: "Three Single Bed",
+    label_vi: "Ba Giường Đơn",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 43,
+    class: "BED",
+    label_en: "Three Double Bed",
+    label_vi: "Ba Giường Đôi",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 44,
+    class: "BED",
+    label_en: "Double Single and Sofa Bed",
+    label_vi: "Đôi Đơn và Giường Sofa",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 45,
+    class: "BED",
+    label_en: "Capsule Bed",
+    label_vi: "Giường Ốc",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 46,
+    class: "BED",
+    label_en: "Bunk Bed",
+    label_vi: "Giường Tầng",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 47,
+    class: "BED",
+    label_en: "Unknown",
+    label_vi: "Không Xác Định",
+    desc_en: "",
+    desc_vi: "",
+    order: 1,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 20,
+    class: "UNIQUE_ACCOMMODATION",
+    label_en: "Houseboat",
+    label_vi: "Nhà trên thuyền",
+    desc_en: "A commercial accommodation located on a boat or cruise ship.",
+    desc_vi: "Một nơi lưu trú thương mại nằm trên thuyền hoặc tàu du lịch.",
+    order: 2,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
+  },
+  {
+    id: 19,
+    class: "UNIQUE_ACCOMMODATION",
+    label_en: "Campsite",
+    label_vi: "Khu cắm trại",
+    desc_en:
+      "A place that provides lodging and usually made from temporary structures like hut, camp or tent.",
+    desc_vi:
+      "Một nơi cung cấp chỗ ở và thường được làm từ cấu trúc tạm thời như lều, trại hoặc túi ngủ.",
+    order: 2,
+    created_at: "2024-01-24 08:13:37.074 +0700",
+    updated_at: "2024-01-24 08:13:37.074 +0700",
+    deleted_at: "",
   },
 ];
 
 export default {
-  "GET /partner/facilities/:lang": (req: Request, res: any) => {
+  "GET /general-types/beds/:lang": (req: Request, res: any) => {
     const url = new URL(req.url || "", "http://localhost:8000");
     const lang = url.pathname.split("/")[3];
 
-    let response = {
-      data: [] as typeof mainFacilityEn,
+    const response = {
+      data: [] as any[],
     };
 
-    if (lang == "vi") {
-      url.searchParams.forEach((value, key) => {
-        if (key == "f") {
-          const params = JSON.parse(value);
-          if ((params.type = "MAIN")) {
-            response.data = mainFacilityVi;
-          }
-        }
+    response.data = generalTypes
+      .filter((item) => item.class == "BED")
+      .map((item) => {
+        return {
+          id: item.id,
+          label: lang == "vi" ? item.label_vi : item.label_en,
+        };
       });
-    }
 
-    url.searchParams.forEach((value, key) => {
-      if (key == "f") {
-        const params = JSON.parse(value);
-        if ((params.type = "MAIN")) {
-          response.data = mainFacilityEn;
-        }
-      }
-    });
-
-    res.status(200).send(response);
+    return res.status(200).send(response);
   },
 };

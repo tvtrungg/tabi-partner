@@ -20,11 +20,33 @@ export default defineConfig({
   fastRefresh: true,
   model: {},
   initialState: {},
-  title: "Tabi",
+  title: "Tabi partner",
   layout: {
     locale: true,
     ...defaultSettings,
   },
+  metas: [
+    {
+      property: "og:image",
+      content: "/images/thumbnail.png",
+    },
+    {
+      property: "og:title",
+      content: "Tabi partner",
+    },
+    {
+      property: "og:description",
+      content: "website for Tabi's partners to manage their business",
+    },
+    {
+      property: "og:image:width",
+      content: "724",
+    },
+    {
+      property: "og:image:height",
+      content: "521",
+    },
+  ],
   moment2dayjs: {
     preset: "antd",
     plugins: ["duration"],

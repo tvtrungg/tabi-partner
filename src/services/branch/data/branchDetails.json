@@ -1,0 +1,260 @@
+[
+  {
+    "id": 1,
+    "branch_name": "Imperial Stay",
+    "address": "Nguyen Trai ",
+    "full_address": "Nguyen Trai, Phường 04, Quận 5, Thành phố Hồ Chí Minh",
+    "province_city": "Thành phố Hồ Chí Minh",
+    "district": "Quận 5",
+    "ward": "Phường 04",
+    "latitude": "",
+    "longitude": "",
+    "is_active": true,
+    "cancellation_time_value": 3,
+    "cancellation_time_unit": "day",
+    "tax_number": "0123456789",
+    "website_url": "https://imperialstay.com/",
+    "general_policy": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\n    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.\n     Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\n    ",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor, nisl eget ultricies aliquam, odio libero ultrices ligula, nec blandit enim",
+    "reception_area": false,
+    "main_facilities": [
+      {
+        "id": 22,
+        "type": "MAIN",
+        "class_en": "Accessibility",
+        "class_vi": "Khả năng tiếp cận",
+        "name_en": "Accessible Bathroom",
+        "name_vi": "Phòng tắm tiện nghi",
+        "created_at": "2023-12-02T05:10:54.303612Z",
+        "updated_at": "2023-12-02T05:10:54.303612Z",
+        "deleted_at": null
+      },
+      {
+        "id": 24,
+        "type": "MAIN",
+        "class_en": "Accessibility",
+        "class_vi": "Khả năng tiếp cận",
+        "name_en": "Braille Or Raised Signage",
+        "name_vi": "Biển hiệu chữ nổi hoặc chữ Braille",
+        "created_at": "2023-12-02T05:10:54.303612Z",
+        "updated_at": "2023-12-02T05:10:54.303612Z",
+        "deleted_at": null
+      },
+      {
+        "id": 32,
+        "type": "MAIN",
+        "class_en": "Common",
+        "class_vi": "Phổ thông",
+        "name_en": "Bar",
+        "name_vi": "Quán bar",
+        "created_at": "2023-12-02T05:10:54.308669Z",
+        "updated_at": "2023-12-02T05:10:54.308669Z",
+        "deleted_at": null
+      },
+      {
+        "id": 35,
+        "type": "MAIN",
+        "class_en": "Common",
+        "class_vi": "Phổ thông",
+        "name_en": "Concierge",
+        "name_vi": "Lễ tân",
+        "created_at": "2023-12-02T05:10:54.308669Z",
+        "updated_at": "2023-12-02T05:10:54.308669Z",
+        "deleted_at": null
+      },
+      {
+        "id": 42,
+        "type": "MAIN",
+        "class_en": "Common",
+        "class_vi": "Phổ thông",
+        "name_en": "Multilingual Staff",
+        "name_vi": "Nhân viên nhiều ngôn ngữ",
+        "created_at": "2023-12-02T05:10:54.308669Z",
+        "updated_at": "2023-12-02T05:10:54.308669Z",
+        "deleted_at": null
+      },
+      {
+        "id": 48,
+        "type": "MAIN",
+        "class_en": "Common",
+        "class_vi": "Phổ thông",
+        "name_en": "Smoking Free",
+        "name_vi": "Không hút thuốc",
+        "created_at": "2023-12-02T05:10:54.308669Z",
+        "updated_at": "2023-12-02T05:10:54.308669Z",
+        "deleted_at": null
+      },
+      {
+        "id": 53,
+        "type": "MAIN",
+        "class_en": "Connectivity",
+        "class_vi": "Kết nối mạng",
+        "name_en": "Internet Point",
+        "name_vi": "Điểm internet",
+        "created_at": "2023-12-02T05:10:54.321639Z",
+        "updated_at": "2023-12-02T05:10:54.321639Z",
+        "deleted_at": null
+      },
+      {
+        "id": 55,
+        "type": "MAIN",
+        "class_en": "Connectivity",
+        "class_vi": "Kết nối mạng",
+        "name_en": "Wifi Public Area",
+        "name_vi": "Khu vực công cộng có Wifi",
+        "created_at": "2023-12-02T05:10:54.321639Z",
+        "updated_at": "2023-12-02T05:10:54.321639Z",
+        "deleted_at": null
+      },
+      {
+        "id": 3,
+        "type": "MAIN",
+        "class_en": "Food & Drinks",
+        "class_vi": "Đồ uống & Ăn uống",
+        "name_en": "Restaurant For Breakfast",
+        "name_vi": "Nhà hàng phục vụ bữa sáng",
+        "created_at": "2023-12-02T05:10:54.26369Z",
+        "updated_at": "2023-12-02T05:10:54.26369Z",
+        "deleted_at": null
+      },
+      {
+        "id": 4,
+        "type": "MAIN",
+        "class_en": "Food & Drinks",
+        "class_vi": "Đồ uống & Ăn uống",
+        "name_en": "Snack Bar",
+        "name_vi": "Quán ăn nhanh",
+        "created_at": "2023-12-02T05:10:54.26369Z",
+        "updated_at": "2023-12-02T05:10:54.26369Z",
+        "deleted_at": null
+      },
+      {
+        "id": 16,
+        "type": "MAIN",
+        "class_en": "Service",
+        "class_vi": "Dịch vụ",
+        "name_en": "Doorman",
+        "name_vi": "Người gác cửa",
+        "created_at": "2023-12-02T05:10:54.288102Z",
+        "updated_at": "2023-12-02T05:10:54.288102Z",
+        "deleted_at": null
+      },
+      {
+        "id": 17,
+        "type": "MAIN",
+        "class_en": "Service",
+        "class_vi": "Dịch vụ",
+        "name_en": "Luggage Storage",
+        "name_vi": "Kho để hành lý",
+        "created_at": "2023-12-02T05:10:54.288102Z",
+        "updated_at": "2023-12-02T05:10:54.288102Z",
+        "deleted_at": null
+      }
+    ],
+    "branch_manager": {
+      "id": 0,
+      "name": "",
+      "username": "",
+      "email": "",
+      "phone": "",
+      "role": "",
+      "last_login": ""
+    },
+    "room_types": [],
+    "type": {
+      "id": 8,
+      "class": "HOTEL_ACCOMMODATION",
+      "label_en": "Hotel",
+      "label_vi": "Chỗ ở theo kiểu Homestay",
+      "desc_en": "A commercial accommodation that provides private rooms with meals and guest services.",
+      "desc_vi": "Một nơi lưu trú thương mại cung cấp phòng riêng với bữa ăn và dịch vụ cho khách.",
+      "order": 2,
+      "created_at": "2023-12-02T04:27:16.17143Z",
+      "updated_at": "2023-12-02T04:28:07.909229Z",
+      "deleted_at": null
+    },
+    "banks": [
+      {
+        "id": 1,
+        "bank_id": 26,
+        "bank_branch": "District 1",
+        "account_number": "123456789687",
+        "account_name": "Nguyễn Văn A",
+        "branch_id": 1,
+        "Branch": null
+      }
+    ],
+    "ratings": [
+      {
+        "id": 11,
+        "username": "tan296",
+        "rating": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "created_at": "2024-06-02"
+      },
+      {
+        "id": 12,
+        "username": "tn1234",
+        "rating": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "created_at": "2024-06-02"
+      },
+      {
+        "id": 13,
+        "username": "tabi",
+        "rating": 5,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "created_at": "2024-06-02"
+      },
+      {
+        "id": 14,
+        "username": "tabi",
+        "rating": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "created_at": "2024-06-02"
+      },
+      {
+        "id": 15,
+        "username": "tabi",
+        "rating": 3,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "created_at": "2024-06-02"
+      },
+      {
+        "id": 16,
+        "username": "tn1234",
+        "rating": 5,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "created_at": "2024-06-02"
+      },
+      {
+        "id": 17,
+        "username": "tn1234",
+        "rating": 5,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "created_at": "2024-06-02"
+      },
+      {
+        "id": 18,
+        "username": "tan296",
+        "rating": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "created_at": "2024-06-02"
+      },
+      {
+        "id": 19,
+        "username": "tan296",
+        "rating": 5,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "created_at": "2024-06-02"
+      },
+      {
+        "id": 20,
+        "username": "tan2002",
+        "rating": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "created_at": "2024-06-02"
+      }
+    ]
+  }
+]

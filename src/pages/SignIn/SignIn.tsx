@@ -6,6 +6,7 @@ import { Button, Col, Form, Input, Row, Typography } from "antd";
 import { MdOutlineLockPerson } from "react-icons/md";
 import "./SignIn.less";
 import { SIGN_UP } from "@/constants/link";
+import { InfoCircleOutlined } from "@ant-design/icons";
 
 const bgImage = require("@/assets/images/bg-landing.jpg");
 
@@ -138,6 +139,13 @@ function SignIn() {
               <FormattedMessage id="signIn.buttonSignUp" />
             </Typography.Link>
           </Typography.Text>
+        </div>
+
+        <div className="w-full rounded-md bg-neutral-100 mt-8 flex items-center justify-start gap-x-2 p-2 text-neutral-400 text-sm">
+          <div>
+            <InfoCircleOutlined />
+          </div>
+          <FormattedMessage id="versionNote" />
         </div>
       </Col>
     </Row>

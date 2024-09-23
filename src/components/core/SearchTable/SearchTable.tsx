@@ -101,7 +101,7 @@ const SearchTable = ({
         <IoMdSearch onClick={() => setIsModalVisible(!isModalVisible)} />
       </span>
       {isModalVisible && (
-        <div className="w-[216px] absolute top-8 right-0 bg-white rounded-md shadow-custom-1 z-20">
+        <div className="w-[170px] absolute top-8 -right-4 bg-white rounded-md shadow-custom-1 z-20">
           <div className="p-2">
             <Input
               ref={searchInput}
@@ -118,16 +118,15 @@ const SearchTable = ({
               <Button
                 type="primary"
                 onClick={handleSearch}
-                icon={<IoMdSearch />}
                 size="small"
-                className="w-24 flex flex-row justify-center items-center"
+                className="w-20 flex flex-row justify-center items-center"
               >
                 <FormattedMessage id="roomType.table.filter.search" />
               </Button>
               <Button
                 onClick={handleReset}
                 size="small"
-                className="w-24 flex flex-row justify-center items-center"
+                className="w-16 flex flex-row justify-center items-center"
               >
                 <FormattedMessage id="roomType.table.filter.reset" />
               </Button>

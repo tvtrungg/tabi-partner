@@ -39,7 +39,7 @@ const PriceDetails: React.FC<TPriceDetailsProps> = ({
 }) => {
   const intl = useIntl();
   const [editRoomPrices, setEditRoomPrices] = useState<boolean>(false);
-  const [form] = Form.useForm<TCreationRoom>();
+  const [form] = Form.useForm<any>();
   const { mutate } = useUpdateRoomPriceDetails(id);
 
   const renderDetail = (
@@ -57,9 +57,7 @@ const PriceDetails: React.FC<TPriceDetailsProps> = ({
         {IconComponent && <IconComponent className="text-base mt-1" />}
         <div className="w-full flex justify-between font-normal mb-1 text-sm">
           <FormattedMessage id={formatMessage} /> :
-          <span className="ml-2 font-light text-sm hover:text-slate-500">
-            {newValue}
-          </span>
+          <span className="ml-2 font-light text-sm">{newValue}</span>
         </div>
       </div>
     );
@@ -68,7 +66,7 @@ const PriceDetails: React.FC<TPriceDetailsProps> = ({
   useEffect(() => {
     if (data) {
       form.setFieldsValue({
-        max_price: String(data.max_price),
+        max_price: formatCurrency(String(data.max_price)),
         online_method: data.facture_reduction.online_method,
         on_cash_method: data.facture_reduction.on_cash_method,
         normal_day: data.facture_reduction.normal_day,
@@ -183,6 +181,7 @@ const PriceDetails: React.FC<TPriceDetailsProps> = ({
 
       <Form form={form}>
         <Modal
+          centered
           open={editRoomPrices}
           closable={false}
           okText="Save"

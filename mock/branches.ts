@@ -863,18 +863,23 @@ const listBranch = [
 const listBranchDetails = [
   {
     id: 1,
-    branch_name: "Branch 1",
-    address: "1084 Võ Văn Kiệt ",
-    full_address: "1084 Võ Văn Kiệt , Phường 04, Quận 5, Thành phố Hồ Chí Minh",
+    branch_name: "Imperial Stay",
+    address: "Nguyen Trai ",
+    full_address: "Nguyen Trai, Phường 04, Quận 5, Thành phố Hồ Chí Minh",
     province_city: "Thành phố Hồ Chí Minh",
     district: "Quận 5",
     ward: "Phường 04",
     latitude: "",
     longitude: "",
+    is_active: true,
     cancellation_time_value: 3,
     cancellation_time_unit: "day",
-    general_policy:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor, nisl eget ultricies aliquam, odio libero ultrices ligula, nec blandit enim.",
+    tax_number: "0123456789",
+    website_url: "https://imperialstay.com/",
+    general_policy: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+     Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+    `,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor, nisl eget ultricies aliquam, odio libero ultrices ligula, nec blandit enim",
     reception_area: false,
@@ -1022,14 +1027,14 @@ const listBranchDetails = [
     },
     room_types: null,
     type: {
-      id: 6,
+      id: 8,
       class: "HOTEL_ACCOMMODATION",
-      label_en: "Homestay",
+      label_en: "Hotel",
       label_vi: "Chỗ ở theo kiểu Homestay",
       desc_en:
-        "A budget accommodation where the guest has private room while sharing some shared areas with other guests.",
+        "A commercial accommodation that provides private rooms with meals and guest services.",
       desc_vi:
-        "Một nơi lưu trú ngân sách nơi khách có phòng riêng nhưng phải chia sẻ một số khu vực chung với khách khác.",
+        "Một nơi lưu trú thương mại cung cấp phòng riêng với bữa ăn và dịch vụ cho khách.",
       order: 2,
       created_at: "2023-12-02T04:27:16.17143Z",
       updated_at: "2023-12-02T04:28:07.909229Z",
@@ -1044,6 +1049,88 @@ const listBranchDetails = [
         account_name: "Nguyễn Văn A",
         branch_id: 1,
         Branch: null,
+      },
+    ],
+    ratings: [
+      {
+        id: 11,
+        username: "tan296",
+        rating: 4,
+        comment:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        created_at: "2024-06-02",
+      },
+      {
+        id: 12,
+        username: "tn1234",
+        rating: 4,
+        comment:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        created_at: "2024-06-02",
+      },
+      {
+        id: 13,
+        username: "tabi",
+        rating: 5,
+        comment:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        created_at: "2024-06-02",
+      },
+      {
+        id: 14,
+        username: "tabi",
+        rating: 4,
+        comment:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        created_at: "2024-06-02",
+      },
+      {
+        id: 15,
+        username: "tabi",
+        rating: 3,
+        comment:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        created_at: "2024-06-02",
+      },
+      {
+        id: 16,
+        username: "tn1234",
+        rating: 5,
+        comment:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        created_at: "2024-06-02",
+      },
+      {
+        id: 17,
+        username: "tn1234",
+        rating: 5,
+        comment:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        created_at: "2024-06-02",
+      },
+      {
+        id: 18,
+        username: "tan296",
+        rating: 4,
+        comment:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        created_at: "2024-06-02",
+      },
+      {
+        id: 19,
+        username: "tan296",
+        rating: 5,
+        comment:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        created_at: "2024-06-02",
+      },
+      {
+        id: 20,
+        username: "tan2002",
+        rating: 4,
+        comment:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        created_at: "2024-06-02",
       },
     ],
   },
@@ -1554,6 +1641,108 @@ const listBranchDetails = [
   },
 ];
 
+const bookingRequest = [
+  {
+    month: 1,
+    quantity: 120,
+  },
+  {
+    month: 2,
+    quantity: 90,
+  },
+  {
+    month: 3,
+    quantity: 96,
+  },
+  {
+    month: 4,
+    quantity: 123,
+  },
+  {
+    month: 5,
+    quantity: 139,
+  },
+  {
+    month: 6,
+    quantity: 145,
+  },
+  {
+    month: 7,
+    quantity: 106,
+  },
+  {
+    month: 8,
+    quantity: 95,
+  },
+  {
+    month: 9,
+    quantity: 110,
+  },
+  {
+    month: 10,
+    quantity: 83,
+  },
+  {
+    month: 11,
+    quantity: 74,
+  },
+  {
+    month: 12,
+    quantity: 52,
+  },
+];
+
+const revenues = [
+  {
+    revenue: 76600000,
+    month: 1,
+  },
+  {
+    revenue: 74139000,
+    month: 2,
+  },
+  {
+    revenue: 75895000,
+    month: 3,
+  },
+  {
+    revenue: 77980000,
+    month: 4,
+  },
+  {
+    revenue: 78038000,
+    month: 5,
+  },
+  {
+    revenue: 81523000,
+    month: 6,
+  },
+  {
+    revenue: 79395000,
+    month: 7,
+  },
+  {
+    revenue: 78770000,
+    month: 8,
+  },
+  {
+    revenue: 79770000,
+    month: 9,
+  },
+  {
+    revenue: 77822000,
+    month: 10,
+  },
+  {
+    revenue: 76584000,
+    month: 11,
+  },
+  {
+    revenue: 74847000,
+    month: 12,
+  },
+];
+
 export default {
   "GET /partner/branches": (req: Request, res: any) => {
     const url = new URL(req.url || "", "http://localhost:8000");
@@ -1579,6 +1768,21 @@ export default {
     if (branch) {
       return res.status(200).send(branch);
     }
-    return res.status(404).send({ message: "Not found" });
+    return res.status(200).send({ message: "Not found" });
+  },
+  "GET /partner/branches/analyses/booking-request-quantity": (
+    req: Request,
+    res: any
+  ) => {
+    const currentMonth = new Date().getMonth() + 1;
+    return res
+      .status(200)
+      .send(bookingRequest.filter((item) => item.month <= currentMonth));
+  },
+  "GET /partner/branches/analyses/revenues": (req: Request, res: any) => {
+    const currentMonth = new Date().getMonth() + 1;
+    return res
+      .status(200)
+      .send(revenues.filter((item) => item.month <= currentMonth));
   },
 };

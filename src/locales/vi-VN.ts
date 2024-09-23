@@ -74,4 +74,6 @@ export default {
     quantity: "Số lượng",
     revenue: "Doanh thu",
   },
+  versionNote:
+    "Trang web này là phiên bản mô phỏng vì máy chủ của chúng tôi đã ngừng hoạt động. Một số chức năng có thể không hoạt động. Nhập bất kỳ để đăng nhập.",
 };

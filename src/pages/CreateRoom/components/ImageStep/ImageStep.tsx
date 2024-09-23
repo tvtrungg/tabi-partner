@@ -62,6 +62,7 @@ function ImageStep({ files, setFiles }: TImageStepProps) {
         </Button>
       </Upload>
       <Modal
+        centered
         open={previewOpen}
         title={previewTitle}
         footer={null}
