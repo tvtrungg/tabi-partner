@@ -24,7 +24,10 @@ You can try the demo [here](https://tabi-partner.vercel.app).
 ## Technology used
 
 - React
-- Antd
+- Ant Design Pro
+- React Query
+- TailwindCSS
+- Valtio
 
 ## Prerequisites
 
