@@ -48,7 +48,8 @@ pnpm start
 
 - [Nam Vu Hoai](https://github.com/namhoai1109)
 - Tan Truong
-- Trung Thieu Vinh (https://github.com/tvtrungg)
+- [Trung Thieu Vinh](https://github.com/tvtrungg)
+- [Hieu Nguyen](https://github.com/nibtr)
 
 ## License
 
