@@ -6,9 +6,11 @@ frontend for our final year project Tabi.
 
 You can try the demo [here](https://tabi-partner.vercel.app).
 
+![image](https://github.com/user-attachments/assets/dfd91bb9-934f-47ba-8238-b21414e40c35)
+
 >[!NOTE]
 > The current version has been modified with mock data instead of
-> integrating with our [backends](https://github.com/namhoai1109/tabi-partner).
+> integrating with our [backends](https://github.com/namhoai1109/tabi-backend).
 > It still functions normally.
 
 ## Features
@@ -41,6 +43,12 @@ Start local development:
 ```
 pnpm start
 ```
+
+## Contributions
+
+- [Nam Vu Hoai](https://github.com/namhoai1109)
+- Tan Truong
+- Trung Thieu Vinh (https://github.com/tvtrungg)
 
 ## License
 
