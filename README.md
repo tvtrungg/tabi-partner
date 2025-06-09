@@ -29,6 +29,11 @@ You can try the demo [here](https://tabi-partner.vercel.app).
 - TailwindCSS
 - Valtio
 
+## Architecture
+
+![system](https://github.com/user-attachments/assets/86dfa117-7311-4f6e-90d0-faca934afa15)
+
+
 ## Prerequisites
 
 - node (>= 18.20.2)
